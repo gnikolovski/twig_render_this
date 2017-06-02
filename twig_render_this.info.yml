@@ -1,0 +1,4 @@
+name: Twig Render This
+description: 'Render entity fields in Twig templates with simple filter.'
+type: module
+core: 8.x
