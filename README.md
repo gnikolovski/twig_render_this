@@ -60,7 +60,7 @@ If you want to use a specific display mode you can use the following syntax:
 {{ node.field_tags | renderThis('teaser') }}
 ```
 
-If you do not provide the display mode, this filter will use the default mode.
+If you do not provide the display mode, the filter will use the default mode.
 
 This filter can be especially useful in your Views templates. For example you
 might be listing node teasers in a View, and then you can use the following
@@ -69,6 +69,21 @@ code to print out View fields:
 ```
 {% for row in rows %}
   {{ row.content['#node'].field_svg | renderThis }}
+{% endfor %}
+```
+
+You can also use this filter to render entities. In some cases this might be 
+useful. For example, if for some reason you need to render the first row in a
+View using the default display mode, and all else rows using the teaser mode, 
+you would write something like this:
+
+```
+{% for row in rows %}
+  {% if loop.index == 1 %}
+    {{ row.content['#node'] | renderThis('default') }}
+  {% else %}
+    {{ row.content['#node'] | renderThis('teaser') }}
+  {% endif %}
 {% endfor %}
 ```
 
