@@ -74,7 +74,7 @@ code to print out View fields:
 
 You can also use this filter to render entities. In some cases this might be 
 useful. For example, if for some reason you need to render the first row in a
-View using the default display mode, and all else rows using the teaser mode, 
+View using the default display mode, and all other rows using the teaser mode, 
 you would write something like this:
 
 ```
