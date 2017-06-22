@@ -2,6 +2,8 @@
 
 namespace Drupal\twig_render_this\TwigExtension;
 
+use Drupal\Core\Entity\EntityInterface;
+
 /**
  * Twig render this filter.
  */
