@@ -20,9 +20,9 @@ class RenderThis extends \Twig_Extension {
    * {@inheritdoc}
    */
   public function getFilters() {
-    return array(
+    return [
       new \Twig_SimpleFilter('renderThis', [$this, 'renderThisFilter']),
-    );
+    ];
   }
 
   /**
@@ -33,7 +33,7 @@ class RenderThis extends \Twig_Extension {
    * @param string $view_mode
    *   Name of the display mode.
    *
-   * @return NULL|array
+   * @return null|array
    *   A rendered array for the field or NULL if the value does not exist.
    */
   public static function renderThisFilter($content, $view_mode = 'default') {
@@ -42,7 +42,7 @@ class RenderThis extends \Twig_Extension {
         ->getViewBuilder($content->getEntityTypeId());
       return $view_builder->view($content, $view_mode);
     }
-    elseif($content instanceof FieldItemInterface ||
+    elseif ($content instanceof FieldItemInterface ||
       $content instanceof FieldItemListInterface ||
       method_exists($content, 'view')
     ) {
