@@ -1,100 +1,50 @@
-# Twig Render This
+CONTENTS OF THIS FILE
+---------------------
 
-Let's look at the following two lines:
+ * Introduction
+ * Requirements
+ * Installation
+ * Configuration
+ * Maintainers
 
-```
-{{ content.field_tags }}
-{{ node.field_tags }}
-```
 
-The difference between these two lines is that in the first case we have the 
-Tags field as a rendered array, and in the second case we have this field as an
-object.
+INTRODUCTION
+------------
 
-You can use the first line in your template to print out the Tags field. But in
-some cases you might want to print out a field from the node directly. If you 
-put the second line in your node template, you will get an error:
+This module allows you to render fields and entities in your Twig templates.
 
-```
-Object of type Drupal\Core\Field\EntityReferenceFieldItemList cannot be printed
-```
+ * For a full description of the module, visit the project page:
+   https://www.drupal.org/docs/8/modules/twig-render-this/tutorial
 
-You cannot print an object just like that. You can if you call the view() method
-on that object:
+ * To submit bug reports and feature suggestions, or to track changes:
+   https://www.drupal.org/project/issues/twig_render_this
 
-```
-{{ node.field_tags.view() }}
-```
 
-But this is not allowed by default. Drupal 8 comes with the Twig Sandbox Policy
-and by default the view() method is blacklisted. In order to whitelist this
-method you must edit your settings.php file and add the following lines:
+REQUIREMENTS
+------------
 
-```
-$settings['twig_sandbox_whitelisted_methods'] = [
-  'id',
-  'label',
-  'bundle',
-  'get',
-  '__toString',
-  'toString',
-  'referencedEntities',
-  'view',
-];
-```
+This module requires no modules outside of Drupal core.
 
-If you don't want to whitelist any method that is by default blacklisted, or if
-editing the settings.php file is not an option, and you want to print field in a
-template you need another solution.
 
-You can use the "Twig Render This" module which provides a simple Twig filter. 
-After you install this module you can use the following syntax in your template:
+INSTALLATION
+------------
 
-```
-{{ node.field_tags | renderThis }}
-```
+ * Install the Twig Render This module as you would normally install a 
+   contributed Drupal module. Visit https://www.drupal.org/node/1897420 for 
+   further information.
 
-If you want to use a specific display mode you can use the following syntax:
 
-```
-{{ node.field_tags | renderThis('teaser') }}
-```
+CONFIGURATION
+-------------
 
-If you do not provide the display mode, the filter will use the default mode.
+    1. Navigate to Administration > Extend and enable the module.
 
-This filter can be especially useful in your Views templates. For example you
-might be listing node teasers in a View, and then you can use the following
-code to print out View fields:
 
-```
-{% for row in rows %}
-  {{ row.content['#node'].field_svg | renderThis }}
-{% endfor %}
-```
+MAINTAINERS
+-----------
 
-You can also use this filter to render entities. In some cases this might be 
-useful. For example, if for some reason you need to render the first row in a
-View using the default display mode, and all other rows using the teaser mode, 
-you would write something like this:
+ * Goran Nikolovski (gnikolovski) - https://www.drupal.org/u/gnikolovski
 
-```
-{% for row in rows %}
-  {% if loop.index == 1 %}
-    {{ row.content['#node'] | renderThis('default') }}
-  {% else %}
-    {{ row.content['#node'] | renderThis('teaser') }}
-  {% endif %}
-{% endfor %}
-```
+Supporting organization:
 
-### AUTHOR
-
-Goran Nikolovski  
-Website: http://gorannikolovski.com  
-Drupal: https://www.drupal.org/user/3451979  
-Email: nikolovski84@gmail.com  
-
-Company: Studio Present, Subotica, Serbia  
-Website: http://www.studiopresent.com  
-Drupal: https://www.drupal.org/studio-present  
-Email: info@studiopresent.com  
+ * Studio Present - https://www.drupal.org/studio-present
