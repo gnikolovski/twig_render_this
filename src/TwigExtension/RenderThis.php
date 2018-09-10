@@ -5,7 +5,7 @@ namespace Drupal\twig_render_this\TwigExtension;
 use Drupal\Core\Entity\EntityInterface;
 
 /**
- * Twig render this filter.
+ * Twig Render This filter.
  */
 class RenderThis extends \Twig_Extension {
 
@@ -49,7 +49,7 @@ class RenderThis extends \Twig_Extension {
       return $content->view($view_mode);
     }
     else {
-      return t('Twig Filter: Unsupported content.');
+      return t('Twig Render This: Unsupported content.');
     }
   }
 
