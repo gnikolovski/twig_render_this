@@ -1,8 +1,8 @@
 {
-    "name": "gnikolovski/twig_render_this",
-    "description": "Render entity fields in Twig templates with simple filter.",
+    "name": "drupal/twig_render_this",
+    "description": "This module allows you to render fields and entities in your Twig templates.",
     "type": "drupal-module",
-    "homepage": "https://github.com/gnikolovski/twig_render_this",
+    "homepage": "https://www.drupal.org/project/twig_render_this",
     "authors": [
         {
             "name": "Goran Nikolovski",
@@ -12,7 +12,7 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/gnikolovski/twig_render_this/issues",
+        "issues": "https://www.drupal.org/node/add/project-issue/twig_render_this",
         "email": "nikolovski84@gmail.com"
     },
     "license": "GPL-2.0+",
