@@ -3,6 +3,8 @@
 namespace Drupal\twig_render_this\TwigExtension;
 
 use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Field\FieldItemInterface;
+use Drupal\Core\Field\FieldItemListInterface;
 
 /**
  * Twig Render This filter.
