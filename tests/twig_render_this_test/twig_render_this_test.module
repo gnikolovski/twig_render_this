@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Primary module hooks for Twig Render This Test.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function twig_render_this_test_theme() {
+  return [
+    'node__page' => [
+      'template' => 'node--page',
+      'base hook' => 'node',
+    ],
+    'node__article' => [
+      'template' => 'node--article',
+      'base hook' => 'node',
+    ],
+  ];
+}
