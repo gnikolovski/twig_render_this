@@ -10,13 +10,21 @@
  */
 function twig_render_this_test_theme() {
   return [
+    'node__article' => [
+      'template' => 'node--article',
+      'base hook' => 'node',
+    ],
     'node__page' => [
       'template' => 'node--page',
       'base hook' => 'node',
     ],
-    'node__article' => [
-      'template' => 'node--article',
+    'node__product' => [
+      'template' => 'node--product',
       'base hook' => 'node',
+    ],
+    'views_view__news' => [
+      'template' => 'views-view--news',
+      'base hook' => 'views_view',
     ],
   ];
 }

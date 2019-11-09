@@ -1,0 +1,10 @@
+<div>
+  <h1>Using Twig Render This to render entities</h1>
+  {% for row in rows.0['#rows'] %}
+    {% if loop.index == 1 %}
+      {{ row['#node'] | renderThis('default') }}
+    {% else %}
+      {{ row['#node'] | renderThis('test_mode') }}
+    {% endif %}
+  {% endfor %}
+</div>

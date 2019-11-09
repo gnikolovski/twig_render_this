@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.test_mode
+    - field.field.node.news.field_description
+    - node.type.news
+  module:
+    - user
+id: node.news.test_mode
+targetEntityType: node
+bundle: news
+mode: test_mode
+content:
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_description: true
