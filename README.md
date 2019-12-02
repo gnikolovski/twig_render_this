@@ -29,22 +29,27 @@ This module requires no modules outside of Drupal core.
 INSTALLATION
 ------------
 
- * Install the Twig Render This module as you would normally install a 
-   contributed Drupal module. Visit https://www.drupal.org/node/1897420 for 
+ * Install the Twig Render This module as you would normally install a
+   contributed Drupal module. Visit https://www.drupal.org/node/1897420 for
    further information.
 
 
-CONFIGURATION
+FAQ
 -------------
 
-    1. Navigate to Administration > Extend and enable the module.
+Q: How do I use this module?
+
+A: Checkout the following resources:
+
+ * https://www.drupal.org/docs/8/modules/twig-render-this/tutorial
+ * https://gorannikolovski.com/blog/example-usage-twig-render-this
 
 
 MAINTAINERS
 -----------
 
+Current maintainers:
  * Goran Nikolovski (gnikolovski) - https://www.drupal.org/u/gnikolovski
 
-Supporting organization:
-
+This project has been sponsored by:
  * Studio Present - https://www.drupal.org/studio-present
