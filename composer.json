@@ -12,7 +12,7 @@
         }
     ],
     "support": {
-        "issues": "https://www.drupal.org/node/add/project-issue/twig_render_this",
+        "issues": "https://www.drupal.org/project/issues/twig_render_this",
         "email": "goran@gorannikolovski.com"
     },
     "license": "GPL-2.0+",
