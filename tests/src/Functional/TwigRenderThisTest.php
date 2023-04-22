@@ -14,7 +14,7 @@ class TwigRenderThisTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public static $modules = [
+  protected static $modules = [
     'menu_ui',
     'node',
     'user',
@@ -31,7 +31,7 @@ class TwigRenderThisTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  public function setUp() {
+  public function setUp(): void {
     parent::setUp();
 
     $types = ['article', 'page', 'product'];
@@ -65,13 +65,13 @@ class TwigRenderThisTest extends BrowserTestBase {
    */
   public function testEntities() {
     $this->drupalGet('news');
-    $this->assertText('Using Twig Render This to render entities');
-    $this->assertText('Start Trek TNG');
-    $this->assertText('Star Trek: The Next Generation (TNG) is an American science fiction television series created by Gene Roddenberry.');
-    $this->assertText('Start Trek DS9');
-    $this->assertNoText('Star Trek: Deep Space Nine (DS9) is an American science fiction television series created by Rick Berman and Michael Piller.');
-    $this->assertText('Start Trek Voyager');
-    $this->assertNoText('Star Trek: Voyager is an American science fiction television series created by Rick Berman, Michael Piller, and Jeri Taylor.');
+    $this->assertSession()->pageTextContains('Using Twig Render This to render entities');
+    $this->assertSession()->pageTextContains('Start Trek TNG');
+    $this->assertSession()->pageTextContains('Star Trek: The Next Generation (TNG) is an American science fiction television series created by Gene Roddenberry.');
+    $this->assertSession()->pageTextContains('Start Trek DS9');
+    $this->assertSession()->pageTextNotContains('Star Trek: Deep Space Nine (DS9) is an American science fiction television series created by Rick Berman and Michael Piller.');
+    $this->assertSession()->pageTextContains('Start Trek Voyager');
+    $this->assertSession()->pageTextNotContains('Star Trek: Voyager is an American science fiction television series created by Rick Berman, Michael Piller, and Jeri Taylor.');
   }
 
   /**
@@ -79,8 +79,8 @@ class TwigRenderThisTest extends BrowserTestBase {
    */
   public function testFieldWithFilter() {
     $this->drupalGet('node/1');
-    $this->assertText('Hello world!');
-    $this->assertText('This is Twig Render This');
+    $this->assertSession()->pageTextContains('Hello world!');
+    $this->assertSession()->pageTextContains('This is Twig Render This');
   }
 
   /**
@@ -88,7 +88,7 @@ class TwigRenderThisTest extends BrowserTestBase {
    */
   public function testFieldWithoutFilter() {
     $this->drupalGet('node/2');
-    $this->assertText('Object of type Drupal\Core\Field\FieldItemList cannot be printed');
+    $this->assertSession()->pageTextContains('Object of type Drupal\Core\Field\FieldItemList cannot be printed');
   }
 
   /**
@@ -96,7 +96,7 @@ class TwigRenderThisTest extends BrowserTestBase {
    */
   public function testUnsupportedContent() {
     $this->drupalGet('node/3');
-    $this->assertText('Twig Render This: Unsupported content.');
+    $this->assertSession()->pageTextContains('Twig Render This: Unsupported content.');
   }
 
 }

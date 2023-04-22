@@ -5,11 +5,13 @@ namespace Drupal\twig_render_this\TwigExtension;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Field\FieldItemInterface;
 use Drupal\Core\Field\FieldItemListInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
 
 /**
  * Twig Render This filter.
  */
-class RenderThis extends \Twig_Extension {
+class RenderThis extends AbstractExtension {
 
   /**
    * {@inheritdoc}
@@ -23,7 +25,7 @@ class RenderThis extends \Twig_Extension {
    */
   public function getFilters() {
     return [
-      new \Twig_SimpleFilter('renderThis', [$this, 'renderThisFilter']),
+      new TwigFilter('renderThis', [$this, 'renderThisFilter']),
     ];
   }
 
