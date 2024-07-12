@@ -1,4 +1,4 @@
 name: Twig Render This
 description: 'This module allows you to render fields and entities in your Twig templates.'
 type: module
-core_version_requirement: ^9 || ^10
+core_version_requirement: ^10 || ^11
